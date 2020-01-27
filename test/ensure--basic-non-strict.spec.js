@@ -1,4 +1,4 @@
-const { ensure } = require('../lib/moon-tdd');
+const { ensure } = require('../lib/ensure');
 
 // Helper function
 function should_fail(value) {

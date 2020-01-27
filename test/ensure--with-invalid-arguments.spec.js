@@ -1,4 +1,4 @@
-const { ensure } = require("../lib/moon-tdd");
+const { ensure } = require("../lib/ensure");
 const { should_throw, equals } = require('./helper');
 /**
  * @type {Error}
