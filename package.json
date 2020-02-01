@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node test/all.js",
     "test:ensure": "node test/ensure.spec",
-    "test:tests": "node test/tests.spec"
+    "test:tests": "node test/tests.spec",
+    "test:exceptions": "node test/exceptions.spec"
   },
   "keywords": [],
   "author": "",

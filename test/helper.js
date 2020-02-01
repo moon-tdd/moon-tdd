@@ -2,7 +2,7 @@
  * Captures the exception and returns it. If no exception was captured it will throw an error of it's own.
  * @param {function} act 
  * @throws When the `act` doesn't throw
- * @returns The exception throw by the act.
+ * @returns {Error} The exception throw by the act.
  */
 function should_throw(act) {
     try {
@@ -11,7 +11,7 @@ function should_throw(act) {
         return ex;
     }
 
-    const error = new Error(`The code \`ensure(${act})\` should throw`);
+    const error = new Error(`The code \`${act}\` should throw`);
     const stack = error.stack.split('\n');
     stack.splice(1, 1);
     error.stack = stack.join('\n');

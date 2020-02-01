@@ -1,0 +1,1 @@
+require("./trap_error.spec");
