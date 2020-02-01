@@ -1,2 +1,2 @@
-require('./ensure.spec.js');
-require('./tests.spec.js');
+require('./ensure.spec');
+require('./tests.spec');

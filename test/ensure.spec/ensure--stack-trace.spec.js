@@ -1,4 +1,4 @@
-const { ensure } = require('../lib/ensure');
+const { ensure } = require('../../lib/ensure');
 
 function invalid_case() {
     ensure(false);

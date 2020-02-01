@@ -1,5 +1,5 @@
-const { ensure } = require("../lib/ensure");
-const { should_throw } = require('./helper');
+const { ensure } = require("../../lib/ensure");
+const { should_throw } = require('../helper');
 
 // Test if it accepts arguments
 ensure(undefined, () => true);

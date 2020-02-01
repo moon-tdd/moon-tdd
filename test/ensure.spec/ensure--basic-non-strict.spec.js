@@ -1,4 +1,4 @@
-const { ensure } = require('../lib/ensure');
+const { ensure } = require('../../lib/ensure');
 
 // Helper function
 function should_fail(value) {

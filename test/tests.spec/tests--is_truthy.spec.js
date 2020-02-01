@@ -1,5 +1,5 @@
-const { ensure } = require('../lib/ensure');
-const { is_truthy } = require('../lib/ensure--tests');
+const { ensure } = require('../../lib/ensure');
+const { is_truthy } = require('../../lib/ensure--tests');
 
 // The ensure function has an internal version of is_truthy, 
 // that way we can verify if the public `is_truthy` is valid.

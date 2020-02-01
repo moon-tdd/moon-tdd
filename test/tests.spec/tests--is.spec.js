@@ -1,5 +1,5 @@
-const { ensure } = require('../lib/ensure');
-const { is } = require('../lib/ensure--tests');
+const { ensure } = require('../../lib/ensure');
+const { is } = require('../../lib/ensure--tests');
 
 const exampleArray = [];
 const exampleObject = {};

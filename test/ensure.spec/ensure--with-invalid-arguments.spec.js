@@ -1,5 +1,5 @@
-const { ensure } = require("../lib/ensure");
-const { should_throw, equals } = require('./helper');
+const { ensure } = require("../../lib/ensure");
+const { should_throw, equals } = require('../helper');
 /**
  * @type {Error}
  */

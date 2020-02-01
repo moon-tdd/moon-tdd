@@ -1,5 +1,5 @@
-const { ensure } = require('../lib/ensure');
-const { is_not } = require('../lib/ensure--tests');
+const { ensure } = require('../../lib/ensure');
+const { is_not } = require('../../lib/ensure--tests');
 
 // Testing it in the prose like way
 ensure(0, is_not, 1);
