@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/all.js",
-    "test:ensure": "node test/ensure.spec.js",
-    "test:tests": "node test/tests.spec.js"
+    "test:ensure": "node test/ensure.spec",
+    "test:tests": "node test/tests.spec"
   },
   "keywords": [],
   "author": "",
