@@ -3,7 +3,7 @@ import { should_throw, equals } from '../helper';
 
 // It should throw when the second argument is a function
 ensure(
-    should_throw(() => ensure(2, 3)).message,
+    should_throw(() => ensure(2, 3 as any as Function)).message,
     equals,
     "3 is not a function, but a number"
 );

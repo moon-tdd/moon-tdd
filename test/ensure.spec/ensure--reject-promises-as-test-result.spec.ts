@@ -38,7 +38,7 @@ import { should_throw } from '../helper';
 // Because the test function is not async.
 //
 
-function is_async_true(v) {
+function is_async_true(v: any) {
     return new Promise((resolve) => resolve(v === true));
 }
 

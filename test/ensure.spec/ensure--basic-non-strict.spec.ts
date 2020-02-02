@@ -1,9 +1,9 @@
 import { ensure } from '../../lib/ensure';
 
 // Helper function
-function should_fail(value) {
+function should_fail(value: any) {
     try {
-        ensure(0); // Should fail
+        ensure(value); // Should fail
         throw new Error(`The code \`ensure(${value})\` should throw`);
     } catch {
         // Pass

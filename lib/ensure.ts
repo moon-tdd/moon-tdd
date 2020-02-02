@@ -8,9 +8,9 @@ import {
 // Internal truthy (don't depend on the external one, 
 // since that makes it impossible to verify if that one 
 // is broken).
-const is_truthy = (v) => !!v;
+const is_truthy = (v: any) => !!v;
 
-export function ensure(value, test?, ...others) {
+export function ensure(value: any, test?: Function, ...others: any[]) {
     if (arguments.length > 1 && !test) {
         throw new Error("Expecting the second parameter to be a function, but was falsy");
     }

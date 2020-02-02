@@ -8,7 +8,7 @@ const act_throwString = () => { throw "an error string"; };
 const act_throwError = () => { throw new Error("an error object"); };
 const act_noThrow = () => { return "a valid response, but no error"; };
 
-function starts_with(v, str) { return v.startsWith(str); }
+function starts_with(v: string, str: string) { return v.startsWith(str); }
 
 ensure(trapError(act_throwString), is, "an error string");
 ensure(trapError(act_throwString), isa_string);

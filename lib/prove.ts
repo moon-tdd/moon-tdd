@@ -1,16 +1,16 @@
 import { reduceStackTrace } from './internal/error-helper';
 
 class Proof {
-    that(name, func) {
+    that(name: string, func: Function) {
         func();
     }
 
-    axiom(func) {
+    axiom(func: Function) {
         func();
     }
 }
 
-export function prove(name, proofFunc) {
+export function prove(name: string, proofFunc: (proof: Proof) => void) {
     const validName = typeof name === "string";
     const validProofFunc = typeof proofFunc === "function";
     const validInput = validName && validProofFunc;

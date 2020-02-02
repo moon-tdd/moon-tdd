@@ -1,4 +1,4 @@
-export function trapError(act) {
+export function trapError(act: Function) {
     try {
         act();
     } catch (error) {

@@ -38,13 +38,13 @@ import { should_throw } from '../helper';
 // Because the test function is not async.
 //
 
-function bad_test_number(v) { return 0; }
-function bad_test_string(v) { return '0'; }
-function bad_test_null(v) { return null; }
-function bad_test_undefined(v) { return undefined; }
-function bad_test_object(v) { return {}; }
-function bad_test_array(v) { return []; }
-function bad_test_function(v) { return () => { }; }
+function bad_test_number() { return 0; }
+function bad_test_string() { return '0'; }
+function bad_test_null() { return null; }
+function bad_test_undefined() { return undefined; }
+function bad_test_object() { return {}; }
+function bad_test_array() { return []; }
+function bad_test_function() { return () => { }; }
 
 ensure(should_throw(() => ensure(false, bad_test_number)).message, is, "The test `bad_test_number` must return a Boolean and not a number");
 ensure(should_throw(() => ensure(false, bad_test_string)).message, is, "The test `bad_test_string` must return a Boolean and not a string");

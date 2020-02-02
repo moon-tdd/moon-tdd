@@ -1,7 +1,7 @@
 import { ensure } from '../../lib/ensure';
 import { is } from '../../lib/tests';
 
-const exampleArray = [];
+const exampleArray: any[] = [];
 const exampleObject = {};
 
 // Testing it in the prose like way
