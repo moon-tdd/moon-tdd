@@ -13,7 +13,7 @@ function should_throw(act) {
 
     const error = new Error(`The code \`${act}\` should throw`);
     const stack = error.stack.split('\n');
-    stack.splice(1, 1);
+    stack.splice(act.toString().split("\n").length, 1);
     error.stack = stack.join('\n');
     throw error;
 }
