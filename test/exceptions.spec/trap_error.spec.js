@@ -1,6 +1,6 @@
 const { trapError } = require('../../lib/error');
 const { ensure } = require("../../lib/ensure");
-const { is, isa_string, holds, is_instance_of } = require('../../lib/tests');
+const { is, isa_string, is_instance_of } = require('../../lib/tests');
 
 const { should_throw } = require('../helper');
 
