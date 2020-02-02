@@ -1,4 +1,4 @@
-const { is } = require('../../lib/tests');
+const { is } = require('../../../lib/tests');
 
 class Calculator {
     value = 0;

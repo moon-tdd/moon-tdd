@@ -1,4 +1,4 @@
-const { ensure } = require('../../lib/ensure');
+const { ensure } = require('../../../lib/ensure');
 const listOfNames = ["Wouter", "Rutger"];
 function include(v, o) { v.includes(o); }
 

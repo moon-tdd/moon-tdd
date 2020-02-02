@@ -1,5 +1,5 @@
-const { ensure } = require('../../lib/ensure');
-const { is, is_not } = require('../../lib/tests');
+const { ensure } = require('../../../lib/ensure');
+const { is, is_not } = require('../../../lib/tests');
 
 class Calculator {
     value = 0;
