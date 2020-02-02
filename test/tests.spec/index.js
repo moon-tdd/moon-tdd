@@ -15,3 +15,5 @@ require('./tests--isa_object.spec');
 require('./tests--isa_string.spec');
 require('./tests--isa_symbol.spec');
 
+require('./tests--is_instance_of.spec');
+
