@@ -4,10 +4,10 @@
   "description": "A TDD library",
   "main": "index.js",
   "scripts": {
-    "test": "node test/all.js",
-    "test:ensure": "node test/ensure.spec",
-    "test:tests": "node test/tests.spec",
-    "test:exceptions": "node test/exceptions.spec"
+    "test": "ts-node test/all",
+    "test:ensure": "ts-node test/ensure.spec",
+    "test:tests": "ts-node test/tests.spec",
+    "test:exceptions": "ts-node test/exceptions.spec"
   },
   "keywords": [],
   "author": "",
