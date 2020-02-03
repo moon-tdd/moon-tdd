@@ -1,4 +1,5 @@
 import { reduceStackTrace } from "./internal/errors";
+import { Report } from "./report";
 
 class Proof {
     that(name: string, func: Function) {
@@ -10,7 +11,7 @@ class Proof {
     }
 }
 
-export function prove(name: string, proofFunc: (proof: Proof) => void) {
+export function prove(name: string, proofFunc: (proof: Proof) => void): Report {
     const validName = typeof name === "string";
     const validProofFunc = typeof proofFunc === "function";
     const validInput = validName && validProofFunc;
@@ -23,10 +24,5 @@ export function prove(name: string, proofFunc: (proof: Proof) => void) {
     // Execute the proof
     proofFunc(context);
 
-    const result = {
-        name,
-        issues: []
-    };
-
-    return result;
+    return {};
 }
