@@ -1,17 +1,7 @@
 import { reduceStackTrace } from "./internal/errors";
 import { Report, ReportState, ReportIssue } from "./report";
 
-class Proof {
-    that(name: string, func: Function) {
-        func();
-    }
-
-    axiom(func: Function) {
-        func();
-    }
-}
-
-export function prove(name: string, proofFunc: (proof: Proof) => void): Report {
+export function prove(name: string, proofFunc: (proof: any) => void): Report {
     const validName = typeof name === "string";
     const validProofFunc = typeof proofFunc === "function";
     const validInput = validName && validProofFunc;
@@ -20,7 +10,7 @@ export function prove(name: string, proofFunc: (proof: Proof) => void): Report {
         throw reduceStackTrace(new Error(errorMessage), 1);
     }
 
-    const context = new Proof();
+    const context = {};
 
     // Execute the proof
     let issues: ReportIssue[] = [];
