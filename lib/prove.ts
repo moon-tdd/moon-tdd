@@ -24,5 +24,8 @@ export function prove(name: string, proofFunc: (proof: Proof) => void): Report {
     // Execute the proof
     proofFunc(context);
 
-    return {};
+    return {
+        name: name,
+        state: 'pass',
+    };
 }
