@@ -1,5 +1,5 @@
 import { reduceStackTrace } from "./internal/errors";
-import { Report } from "./report";
+import { Report, ReportState } from "./report";
 
 class Proof {
     that(name: string, func: Function) {
@@ -21,11 +21,18 @@ export function prove(name: string, proofFunc: (proof: Proof) => void): Report {
     }
 
     const context = new Proof();
+
     // Execute the proof
-    proofFunc(context);
+    let state: ReportState;
+    try {
+        proofFunc(context);
+        state = 'pass';
+    } catch{
+        state = 'error';
+    }
 
     return {
         name: name,
-        state: 'pass',
+        state,
     };
 }

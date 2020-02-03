@@ -1,4 +1,4 @@
-export type ReportState = 'pass';
+export type ReportState = 'pass' | 'error';
 
 export interface Report {
     state: ReportState;
