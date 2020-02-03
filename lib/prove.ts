@@ -1,4 +1,4 @@
-import { reduceStackTrace } from './internal/error-helper';
+import { reduceStackTrace } from "./internal/errors";
 
 class Proof {
     that(name: string, func: Function) {

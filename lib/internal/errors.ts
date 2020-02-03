@@ -1,18 +1,13 @@
-import { reduceStackTrace } from './internal/error-helper';
+import { getFunctionName } from "./functions";
 
-type NamedFunction = Function & { name: string };
-
-export function getFunctionName(func: Function | NamedFunction) {
-    return (func as NamedFunction).name || func.toString();
+export function reduceStackTrace(error: Error, depth: number) {
+    depth = depth === undefined ? 1 : depth;
+    const errorText = error.message;
+    const stack = (error.stack || "").split('\n');
+    stack.splice(errorText.split('\n').length, depth);
+    error.stack = stack.join("\n");
+    return error;
 }
-
-export function throw_unless_function(test: any) {
-    const testType = typeof test;
-    if (testType === "function") return;
-
-    throw new Error(`${test} is not a function, but a ${testType}`);
-}
-
 
 export function createEnsureError(value: any, test: Function, ...others: any[]) {
     // Make the arguments a wrapped string
@@ -25,4 +20,3 @@ export function createInvalidResponseError(test: Function, testResultType: strin
     const errorText = `The test \`${getFunctionName(test)}\` must return a Boolean and not a ${testResultType}`;
     throw reduceStackTrace(new Error(errorText), 2);
 }
-

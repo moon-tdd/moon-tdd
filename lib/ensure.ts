@@ -1,8 +1,7 @@
 import {
     createEnsureError,
-    throw_unless_function,
-    createInvalidResponseError,
-} from './ensure--internal--helper';
+    createInvalidResponseError
+} from "./internal/errors";
 
 
 // Internal truthy (don't depend on the external one, 
@@ -16,7 +15,10 @@ export function ensure(value: any, test?: Function, ...others: any[]) {
     }
 
     test = test || is_truthy;
-    throw_unless_function(test);
+    const testType = typeof test;
+    if (testType !== "function") {
+        throw new Error(`${test} is not a function, but a ${testType}`);
+    }
 
 
     const testResult = test(value, ...others);
