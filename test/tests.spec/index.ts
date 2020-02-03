@@ -16,3 +16,4 @@ import './tests--isa_symbol.spec';
 
 import './tests--is_instance_of.spec';
 
+import './tests--has_length_of.spec';
