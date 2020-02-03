@@ -1,7 +1,7 @@
 import { reduceStackTrace } from "./internal/errors";
 import { Report, ReportState, ReportIssue } from "./report";
 
-export function prove(name: string, proofFunc: (proof: any) => void): Report {
+export function prove(name: string, proofFunc: () => void): Report {
     const validName = typeof name === "string";
     const validProofFunc = typeof proofFunc === "function";
     const validInput = validName && validProofFunc;
@@ -10,13 +10,11 @@ export function prove(name: string, proofFunc: (proof: any) => void): Report {
         throw reduceStackTrace(new Error(errorMessage), 1);
     }
 
-    const context = {};
-
     // Execute the proof
     let issues: ReportIssue[] = [];
     let state: ReportState;
     try {
-        proofFunc(context);
+        proofFunc();
         state = 'pass';
     } catch (error) {
         state = 'error';
