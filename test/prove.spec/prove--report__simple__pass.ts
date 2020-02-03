@@ -3,10 +3,10 @@ import { prove } from "../../lib/prove";
 import { is, isa_object, has_length_of, is_instance_of } from "../../lib/tests";
 
 // Should execute the body
-const basicReport = prove("name of proof", () => { });
+const report = prove("name of proof", () => { });
 
-ensure(basicReport, isa_object);
-ensure(basicReport.state, is, 'pass');
-ensure(basicReport.name, is, "name of proof");
-ensure(basicReport.issues, is_instance_of, Array);
-ensure(basicReport.issues, has_length_of, 0);
+ensure(report, isa_object);
+ensure(report.state, is, 'pass');
+ensure(report.name, is, "name of proof");
+ensure(report.issues, is_instance_of, Array);
+ensure(report.issues, has_length_of, 0);

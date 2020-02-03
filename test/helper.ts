@@ -22,3 +22,10 @@ export function equals<T>(actual: T, expected: T) {
     return actual === expected;
 }
 
+export function waitFor(n: number) {
+    new Promise((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, n);
+    });
+}
